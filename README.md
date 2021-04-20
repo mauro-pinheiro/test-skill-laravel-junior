@@ -49,6 +49,6 @@ Siga os passos abaixo:
 
 - Clone este repositório
 - Crie uma branch com seu nome
-- Enviar sua branch para este repositório em forma de PR
+- Envie sua branch para este repositório em forma de PR
 
 Se por motivos de força maior não for possível cumprir com o prazo, por gentileza, nos informe via email.
