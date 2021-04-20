@@ -12,22 +12,22 @@ Esperamos também que você se divirta e aprenda algo no processo. :blush:
 
 ## :eyes: O problema
 
-Desenvolver um crud simples de clientes e produtos que integram as seguintes funcionalidades do **Laravel**.
+Desenvolver um CRUD simples de clientes e produtos que utilize as funcionalidades do **Laravel** descritas abaixo.
 
 ## :bulb: A proposta
 
-Você deve codificá-la :smiley: utilizando PHP Laravel.
+Você deve codificar o projeto utilizando utilizando PHP Laravel. :smiley:
 
-- Utilizar o _Laravel Breeze com Inertia.js_ e enviar tudo configurado, login, reset de senha e outros.
-- Criar a API utilizando o Laravel Sanctum e documentar com alguma ferramenta integrada
+- Utilizar o _Laravel Breeze_ com _Inertia.js_ e enviar tudo configurado, login, reset de senha e outros;
+- Criar a API utilizando o _Laravel Sanctum_ e documentar com alguma ferramenta integrada.
 
-Por fim, forneça uma documentação, por meio de um arquivo documentation.md, acerca do seu projeto. Inclua instruções completas para a execução da aplicação, e comentários que julgar pertinentes à avaliação.
+Por fim, forneça uma documentação, por meio de um arquivo "documentation.md", acerca do seu projeto. Inclua instruções completas para a execução da aplicação, e comentários que julgar pertinentes à avaliação.
 
 ## :dart: Requisitos do projeto
 
 - O código deve seguir o padrão PSR adotado no PHP + Laravel;
 - Organização do código;
-- Fornecer uma documentação, incluindo instruções para a execução da sua aplicação;
+- Fornecer uma documentação, incluindo instruções para a execução da sua aplicação.
 
 ## :clap: Diferenciais
 
@@ -38,17 +38,17 @@ Por fim, forneça uma documentação, por meio de um arquivo documentation.md, a
 
 - A qualidade do seu **código**;
 - O cumprimento dos **requisitos**;
-- A **fidelidade** da interface codificada;
 - A **estrutura** do seu projeto: esperamos ver componentização coesa, reuso, encapsulamento, separação de responsabilidades, etc;
 - Seu **empenho**: não tem problema se algo não sair como desejado, mas tente! :blush:
 
 ## :email: Sobre a entrega
 
 O teste tem até 7 dias para ser entregue a partir do recebimento das instruções.
+
 Siga os passos abaixo:
 
-- Clone este repositório
-- Crie uma branch com seu nome
-- Envie sua branch para este repositório em forma de PR
+- Clone este repositório;
+- Crie uma branch com seu nome;
+- Envie sua branch para este repositório em forma de PR.
 
 Se por motivos de força maior não for possível cumprir com o prazo, por gentileza, nos informe via email.
