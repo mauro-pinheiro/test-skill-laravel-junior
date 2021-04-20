@@ -18,7 +18,7 @@ Desenvolver um crud simples de clientes e produtos que integram as seguintes fun
 
 Você deve codificá-la :smiley: utilizando PHP Laravel.
 
-- Utilizar o _Laravel Breeze com Inertia.js_ e isso enviar tudo configurado, login, reset de senha e outros.
+- Utilizar o _Laravel Breeze com Inertia.js_ e enviar tudo configurado, login, reset de senha e outros.
 - Criar a API utilizando o Laravel Sanctum e documentar com alguma ferramenta integrada
 
 Por fim, forneça uma documentação, por meio de um arquivo documentation.md, acerca do seu projeto. Inclua instruções completas para a execução da aplicação, e comentários que julgar pertinentes à avaliação.
