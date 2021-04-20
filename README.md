@@ -1,12 +1,12 @@
 ## :rocket: Teste técnico para Desenvolvedor(a) Back-end Junior na Ensinio
 
-O presente teste foi cuidadosamente planejado para validar os conhecimentos necessários para a posição de Desenvolvedor(a) Back-end Junior na Ensinio.
+Este foi planejado para validar os conhecimentos necessários para a posição de Desenvolvedor(a) Back-end Junior na Ensinio.
 
 Serão avaliados aspectos relacionados aos conhecimentos em boas práticas de desenvolvimento, além dos conhecimentos nas tecnologias PHP, Laravel, e no ecossistema que as cerca.
 
 É esperado que você codifique com organização e siga os padrões determinados (estamos confiantes de que você pode vencer a vontade de fazer gambiarras :stuck_out_tongue_winking_eye:), e demonstre sua atenção em detalhes, capacidade de aprender e agregar valor.
 
-Recomendamos partir da premissa fictícia de que, embora o sistema proposto seja simples, ele está sendo desenvolvido para compor um projeto de larga escala, portanto seu código deve estar à altura.
+Recomendamos que, embora o sistema proposto seja simples, ele está sendo desenvolvido para compor um projeto de larga escala, portanto seu código deve estar à altura.
 
 Esperamos também que você se divirta e aprenda algo no processo. :blush:
 
@@ -18,7 +18,7 @@ Desenvolver um crud simples de clientes e produtos que integram as seguintes fun
 
 Você deve codificá-la :smiley: utilizando PHP Laravel.
 
-- Utilizar o _Laravel Breeze com Inertia.js_ e com isso enviar com tudo configurado, login, reset de senha
+- Utilizar o _Laravel Breeze com Inertia.js_ e isso enviar tudo configurado, login, reset de senha e outros.
 - Criar a API utilizando o Laravel Sanctum e documentar com alguma ferramenta integrada
 
 Por fim, forneça uma documentação, por meio de um arquivo documentation.md, acerca do seu projeto. Inclua instruções completas para a execução da aplicação, e comentários que julgar pertinentes à avaliação.
