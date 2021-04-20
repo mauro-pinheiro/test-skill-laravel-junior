@@ -25,8 +25,9 @@ Por fim, forneça uma documentação, por meio de um arquivo "documentation.md",
 
 ## :dart: Requisitos do projeto
 
-- O código deve seguir o padrão PSR adotado no PHP + Laravel;
-- Organização do código;
+- O código deve seguir o padrão PSR adotado no PHP + Laravel.
+- Organização do código.
+- Criar seeders com factory do Laravel para popular o banco de dados.
 - Fornecer uma documentação, incluindo instruções para a execução da sua aplicação.
 
 ## :clap: Diferenciais
