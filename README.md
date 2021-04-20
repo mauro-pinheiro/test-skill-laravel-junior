@@ -12,7 +12,7 @@ Esperamos também que você se divirta e aprenda algo no processo. :blush:
 
 ## :eyes: O problema
 
-Desenvolver uma crud simples de clientes e produtos que integram as seguintes funcionalidades do **Laravel**.
+Desenvolver um crud simples de clientes e produtos que integram as seguintes funcionalidades do **Laravel**.
 
 ## :bulb: A proposta
 
