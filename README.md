@@ -49,7 +49,8 @@ O teste tem até 7 dias para ser entregue a partir do recebimento das instruçõ
 Siga os passos abaixo:
 
 - Clone este repositório;
-- Crie uma branch com seu nome;
-- Envie sua branch para este repositório em forma de PR.
+- Crie uma branch com seu nome (no formato “nome-sobrenome”);
+- Envie sua branch para este repositório em forma de PR;
+- Envie o link da PR respondendo à **mesma conversa de email onde enviamos o link do desafio**.
 
-Se por motivos de força maior não for possível cumprir com o prazo, por gentileza, nos informe via email.
+Se por motivos de força maior não for possível cumprir com o prazo, por gentileza, nos informe respondendo à mesma conversa de email onde enviamos o link do desafio.
