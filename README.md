@@ -12,20 +12,24 @@ Esperamos também que você se divirta e aprenda algo no processo. :blush:
 
 ## :eyes: O problema
 
-Desenvolver um CRUD simples de clientes e produtos que utilize as funcionalidades do **Laravel** descritas abaixo.
+Desenvolver um CRUD simples de clientes e produtos que utilize as funcionalidades do **Laravel** descritas abaixo:
 
 ## :bulb: A proposta
 
 Você deve codificar o projeto utilizando utilizando PHP Laravel. :smiley:
 
-- Utilizar o _Laravel Breeze_ com _Inertia.js_ e enviar tudo configurado, login, reset de senha e outros;
-- Criar a API utilizando o _Laravel Sanctum_ e documentar com alguma ferramenta integrada.
+- Desenvolver o crud com (_Laravel Breeze_)[https://laravel.com/docs/8.x/starter-kits#laravel-breeze] e (_Inertia.js_)[https://laravel.com/docs/8.x/starter-kits#breeze-and-inertia].
+- Criar a API utilizando o (_Laravel Sanctum_)[https://laravel.com/docs/8.x/sanctum] e documentar com alguma ferramenta como o (swagger)[https://swagger.io
+] ou afins.
+- Seguir o modelo conceitual abaixo:
+
+![Modelo Conceitual](Modelo conceitual - Banco - Junior.png)
 
 Por fim, forneça uma documentação, por meio de um arquivo "documentation.md", acerca do seu projeto. Inclua instruções completas para a execução da aplicação, e comentários que julgar pertinentes à avaliação.
 
 ## :dart: Requisitos do projeto
 
-- O código deve seguir o padrão PSR adotado no PHP + Laravel.
+- O código deve seguir o padrão PSR2.
 - Organização do código.
 - Criar seeders com factory do Laravel para popular o banco de dados.
 - Fornecer uma documentação, incluindo instruções para a execução da sua aplicação.
