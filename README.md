@@ -10,28 +10,25 @@ Recomendamos que, embora o sistema proposto seja simples, ele está sendo desenv
 
 Esperamos também que você se divirta e aprenda algo no processo. :blush:
 
-## :eyes: O problema
-
-Desenvolver um CRUD simples de clientes e produtos que utilize as funcionalidades do **Laravel** descritas abaixo:
-
 ## :bulb: A proposta
 
-Você deve codificar o projeto utilizando utilizando PHP Laravel. :smiley:
+Você deve codificar, utilizando utilizando PHP + Laravel, um CRUD de clientes e produtos de acordo com o modelo conceitual de banco de dados abaixo:
 
-- Desenvolver o crud com (_Laravel Breeze_)[https://laravel.com/docs/8.x/starter-kits#laravel-breeze] e (_Inertia.js_)[https://laravel.com/docs/8.x/starter-kits#breeze-and-inertia].
-- Criar a API utilizando o (_Laravel Sanctum_)[https://laravel.com/docs/8.x/sanctum] e documentar com alguma ferramenta como o (swagger)[https://swagger.io
-] ou afins.
-- Seguir o modelo conceitual abaixo:
+![Modelo Conceitual](junior-database.png)
 
-![Modelo Conceitual](Modelo conceitual - Banco - Junior.png)
+Utilize o [_Laravel Breeze_](https://laravel.com/docs/8.x/starter-kits#laravel-breeze) e [_Inertia.js_](https://laravel.com/docs/8.x/starter-kits#breeze-and-inertia).
+
+Para a autenticação dos clientes na API, utilize o [_Laravel Sanctum_](https://laravel.com/docs/8.x/sanctum).
+
+Documente a API utilizando alguma ferramenta integrada como o [Swagger](https://swagger.io) ou congêneres.
 
 Por fim, forneça uma documentação, por meio de um arquivo "documentation.md", acerca do seu projeto. Inclua instruções completas para a execução da aplicação, e comentários que julgar pertinentes à avaliação.
 
 ## :dart: Requisitos do projeto
 
-- O código deve seguir o padrão PSR2.
-- Organização do código.
-- Criar seeders com factory do Laravel para popular o banco de dados.
+- Organização do código;
+- O código deve seguir o padrão PSR2;
+- Criar seeders com factory do Laravel para popular o banco de dados;
 - Fornecer uma documentação, incluindo instruções para a execução da sua aplicação.
 
 ## :clap: Diferenciais
@@ -48,13 +45,6 @@ Por fim, forneça uma documentação, por meio de um arquivo "documentation.md",
 
 ## :email: Sobre a entrega
 
-O teste tem até 7 dias para ser entregue a partir do recebimento das instruções.
-
-Siga os passos abaixo:
-
-- Clone este repositório;
-- Crie uma branch com seu nome (no formato “nome-sobrenome”);
-- Envie sua branch para este repositório em forma de PR;
-- Envie o link da PR respondendo à **mesma conversa de email onde enviamos o link do desafio**.
+Pedimos que, por gentileza, entregue o teste em até 7 dias a partir do recebimento das instruções, respondendo à **mesma conversa de email onde enviamos o link do desafio** e incluindo o link de um **repositório privado** no GitHub. Neste repositório, **adicione como colaborador o usuário [@socramjunio2](https://github.com/socramjunio2)** (socramjunio@gmail.com).
 
 Se por motivos de força maior não for possível cumprir com o prazo, por gentileza, nos informe respondendo à mesma conversa de email onde enviamos o link do desafio.
