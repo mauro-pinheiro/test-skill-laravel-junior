@@ -16,9 +16,9 @@ Você deve codificar, utilizando utilizando PHP + Laravel, um CRUD de clientes e
 
 ![Modelo Conceitual](junior-database.png)
 
-Utilize o [_Laravel Breeze_](https://laravel.com/docs/8.x/starter-kits#laravel-breeze) e [_Inertia.js_](https://laravel.com/docs/8.x/starter-kits#breeze-and-inertia).
+Utilize o [_Laravel Breeze_](https://laravel.com/docs/8.x/starter-kits#laravel-breeze) e [_Inertia.js_](https://laravel.com/docs/8.x/starter-kits#breeze-and-inertia) para construção do CRUD.
 
-Para a autenticação dos clientes na API, utilize o [_Laravel Sanctum_](https://laravel.com/docs/8.x/sanctum).
+Para consumir a api, desenvolva a autenticação com [_Laravel Sanctum_](https://laravel.com/docs/8.x/sanctum). _Não é necessário criar o frontend para o cliente final visualizar os produtos_. É necessário criar apenas a resposta da api em RestFull.
 
 Documente a API utilizando alguma ferramenta integrada como o [Swagger](https://swagger.io) ou congêneres.
 
