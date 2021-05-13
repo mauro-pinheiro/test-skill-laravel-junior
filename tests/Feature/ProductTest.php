@@ -97,7 +97,7 @@ class ProductTest extends TestCase
     /**
      * @test
      */
-    public function productDestory()
+    public function productDestroy()
     {
         $product = Product::factory()->create();
 
