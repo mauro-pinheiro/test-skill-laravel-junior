@@ -18,7 +18,7 @@ return new Class extends Migration
             $table->string('document')->unique();
             $table->string('document_type');
             $table->string('full_name');
-            $table->string('phone_number');
+            $table->string('phone');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

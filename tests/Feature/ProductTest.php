@@ -67,11 +67,11 @@ class ExampleTest extends TestCase
 
         $response = $this->json('GET', route('products.show', $product));
 
-        dd($response->decodeResponseJson());
+        // dd($response->decodeResponseJson());
 
         $response
             ->assertOk()
-            ->assertJsonPath('id', $product->id);
+            ->assertJsonPath('data.name', $product->name);
     }
 
     /**

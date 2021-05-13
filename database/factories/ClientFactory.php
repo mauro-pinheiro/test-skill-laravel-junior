@@ -26,7 +26,7 @@ class ClientFactory extends Factory
             'document' => $this->faker->unique()->cpf(false),
             'document_type' => 'cpf',
             'full_name' => $this->faker->name(),
-            'phone_number' => $this->faker->phoneNumberCleared(),
+            'phone' => $this->faker->phoneNumberCleared(),
             'user_id' => User::factory()
         ];
     }
