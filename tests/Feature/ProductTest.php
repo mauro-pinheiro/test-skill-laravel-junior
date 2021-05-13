@@ -22,7 +22,7 @@ class ExampleTest extends TestCase
         $response = $this->json('GET', route('products.index'));
         $response
             ->assertOk()
-            ->assertJsonPath('total', $total);
+            ->assertJsonPath('meta.total', $total);
     }
     /**
      * @test
