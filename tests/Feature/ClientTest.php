@@ -17,6 +17,7 @@ class ClientTest extends TestCase
      */
     public function clientIndex()
     {
+        $this->withoutExceptionHandling();
         Client::factory($total = $this->faker->numberBetween(15, 50))->create();
 
         $response = $this->json('GET', route('clients.index'));
@@ -31,10 +32,13 @@ class ClientTest extends TestCase
      */
     public function clientStore()
     {
+        $this->withoutExceptionHandling();
         $client = Client::factory([
             'created_at' => now(),
             'updated_at' => now(),
         ])->make();
+
+        // dd($client->getAttributes());
 
         $response = $this->json('POST', route('clients.store'), $client->toArray());
 
@@ -84,7 +88,7 @@ class ClientTest extends TestCase
     /**
      * @test
      */
-    public function clientDestory()
+    public function clientDestroy()
     {
         $client = Client::factory()->create();
 
