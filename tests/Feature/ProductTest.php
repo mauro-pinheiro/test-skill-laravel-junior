@@ -8,7 +8,7 @@ use App\Models\Product;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ExampleTest extends TestCase
+class ProductTest extends TestCase
 {
     use RefreshDatabase;
     use WithFaker;
