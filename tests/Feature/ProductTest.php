@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use App\Models\Client;
 use App\Models\Product;
+use Laravel\Sanctum\Sanctum;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -17,6 +18,7 @@ class ProductTest extends TestCase
     {
         parent::setUp();
         Client::factory(10)->create();
+        Sanctum::actingAs(Client::first()->user);
     }
 
     /**

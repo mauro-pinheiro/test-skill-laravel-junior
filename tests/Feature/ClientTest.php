@@ -3,7 +3,9 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use App\Models\User;
 use App\Models\Client;
+use Laravel\Sanctum\Sanctum;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -11,6 +13,11 @@ class ClientTest extends TestCase
 {
     use RefreshDatabase;
     use WithFaker;
+
+    protected function setUp() : void{
+        parent::setUp();
+        Sanctum::actingAs(User::factory()->create());
+    }
 
     /**
      * @test

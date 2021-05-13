@@ -19,4 +19,14 @@ class Client extends Model
     public function products(){
         return $this->hasMany(Product::class);
     }
+
+    public function getDisplayNameAttribute() : string {
+        return $this->user->name;
+    }
+    public function getEmailAttribute() : string{
+        return $this->user->email;
+    }
+    public function getPasswordAttribute() : string{
+        return $this->user->password;
+    }
 }
