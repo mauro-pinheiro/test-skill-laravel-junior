@@ -30,6 +30,7 @@ class ProductUpdateRequest extends FormRequest
             'sku'                   => 'sometimes|string|unique:products',
             'stock_amount'          => 'sometimes|integer',
             'client_id'             => 'sometimes|exists:clients,id',
+            'updated_at'            => 'sometimes|date',
         ];
     }
 }

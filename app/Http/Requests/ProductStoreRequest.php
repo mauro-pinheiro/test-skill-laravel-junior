@@ -30,6 +30,8 @@ class ProductStoreRequest extends FormRequest
             'sku'                   => 'required|string|unique:products',
             'stock_amount'          => 'required|integer',
             'client_id'             => 'exists:clients,id',
+            'created_at'            => 'sometimes|date',
+            'updated_at'            => 'sometimes|date',
         ];
     }
 }
