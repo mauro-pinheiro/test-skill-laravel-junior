@@ -16,7 +16,7 @@ return new Class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->float('price');
             $table->string('sku')->unique();      //Stock Keeping Units -> Usado para identificar tipo de produto, facilita o gerenciamento de stocks.
             $table->unsignedInteger('stock_amount');
