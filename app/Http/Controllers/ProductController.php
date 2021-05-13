@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Resources\ProductResource;
 use App\Http\Resources\ProductCollection;
 use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
@@ -39,7 +40,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return $product;
+        return new ProductResource($product);
     }
 
     /**

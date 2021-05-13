@@ -67,6 +67,8 @@ class ExampleTest extends TestCase
 
         $response = $this->json('GET', route('products.show', $product));
 
+        dd($response->decodeResponseJson());
+
         $response
             ->assertOk()
             ->assertJsonPath('id', $product->id);
