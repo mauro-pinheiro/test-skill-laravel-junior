@@ -3,8 +3,13 @@
 
     <form @submit.prevent="submit">
         <div>
-            <breeze-label for="name" value="Name" />
-            <breeze-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />
+            <breeze-label for="display_name" value="Display Name" />
+            <breeze-input id="display_name" type="text" class="mt-1 block w-full" v-model="form.display_name" required autofocus autocomplete="name" />
+        </div>
+
+        <div>
+            <breeze-label for="full_name" value="Full Name" />
+            <breeze-input id="full_name" type="text" class="mt-1 block w-full" v-model="form.full_name" required autofocus autocomplete="name" />
         </div>
 
         <div class="mt-4">
@@ -20,6 +25,21 @@
         <div class="mt-4">
             <breeze-label for="password_confirmation" value="Confirm Password" />
             <breeze-input id="password_confirmation" type="password" class="mt-1 block w-full" v-model="form.password_confirmation" required autocomplete="new-password" />
+        </div>
+
+        <div>
+            <breeze-label for="phone" value="Phone" />
+            <breeze-input id="phone" type="text" class="mt-1 block w-full" v-model="form.phone" required />
+        </div>
+
+        <div>
+            <breeze-label for="document" value="Document" />
+            <breeze-input id="document" type="text" class="mt-1 block w-full" v-model="form.document" required />
+        </div>
+
+        <div>
+            <breeze-label for="document_type" value="Tipo do Documento" />
+            <breeze-input id="document_type" type="text" class="mt-1 block w-full" v-model="form.document_type" required />
         </div>
 
         <div class="flex items-center justify-end mt-4">
@@ -59,10 +79,14 @@
         data() {
             return {
                 form: this.$inertia.form({
-                    name: '',
+                    display_name: '',
+                    full_name: '',
                     email: '',
+                    phone: '',
                     password: '',
                     password_confirmation: '',
+                    document: '',
+                    document_type: '',
                     terms: false,
                 })
             }
