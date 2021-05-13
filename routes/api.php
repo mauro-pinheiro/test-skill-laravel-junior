@@ -16,7 +16,8 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', fn(Request $request) => $request->user());
-
-Route::apiResource('products', ProductController::class);
-Route::apiResource('clients', ClientController::class);
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/user', fn(Request $request) => $request->user());
+    Route::apiResource('products', ProductController::class);
+    Route::apiResource('clients', ClientController::class);
+});
