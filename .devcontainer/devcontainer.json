@@ -34,7 +34,9 @@
         "oderwat.indent-rainbow",
         "apility.beautify-blade",
         "tabnine.tabnine-vscode",
-        "mehedidracula.php-namespace-resolver"
+        "mehedidracula.php-namespace-resolver",
+        "humao.rest-client",
+        "octref.vetur"
     ],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
