@@ -51,10 +51,12 @@ class RegisteredUserController extends Controller
             'user_id' => $user->id
         ]);
 
+        $token = $request->user()->createToken('access_token')->plainTextToken;
+
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(RouteServiceProvider::HOME)->with('token', $token);
     }
 }

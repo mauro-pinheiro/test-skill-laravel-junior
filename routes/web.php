@@ -24,7 +24,11 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
+Route::get('/dashboard', function (Request $request) {
+    if(session()->has('token')){
+        $token = session()->get('token');
+        return Inertia::render('Dashboard', compact('token'));
+    }
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
