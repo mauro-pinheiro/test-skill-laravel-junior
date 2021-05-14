@@ -12,19 +12,53 @@ use App\Http\Requests\ProductUpdateRequest;
 class ProductController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @OA\Get(
+     *      tags={"/products"},
+     *      summary="Display list of resources",
+     *      description="get all products on the database and paginate them",
+     *      path="/products",
+     *      security={{"bearerAuth": {}}},
+     *      @OA\Parameter(
+     *          name="limit",
+     *          in="query",
+     *          description="limit per page",
+     *          @OA\Schema(type="int"),
+     *          style="form"
+     *      ),
+     *      @OA\Response(
+     *          response="200", description="List of products"
+     *      )
+     *  )
+     * @return ProductCollection
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new ProductCollection(Product::paginate());
+        return new ProductCollection(Product::paginate($request->limit ?? null));
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  ProductoStoreRequest  $request
+     * @OA\Post(
+     *      tags={"/products"},
+     *      summary="Update the expecified resources",
+     *      description="Update product on database",
+     *      path="/products",
+     *      security={{"bearerAuth": {}}},
+     *      @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent(
+     *              type="object",
+     *              @OA\Property(property="name", type="string"),
+     *              @OA\Property(property="description", type="string"),
+     *              @OA\Property(property="price", type="string"),
+     *              @OA\Property(property="sku", type="string"),
+     *              @OA\Property(property="stock_amount", type="string"),
+     *              @OA\Property(property="client_id", type="string"),
+     *          ),
+     *      ),
+     *      @OA\Response(
+     *          response="201", description="Product created"
+     *      )
+     *  )
      * @return \Illuminate\Http\Response
      */
     public function store(ProductStoreRequest $request)
@@ -33,10 +67,24 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  Product  $product
-     * @return \Illuminate\Http\Response
+     * @OA\Get(
+     *      tags={"/products"},
+     *      summary="Display the expecified resources",
+     *      description="show product",
+     *      path="/products/{product}",
+     *      security={{"bearerAuth": {}}},
+     *      @OA\Parameter(
+     *          name="product",
+     *          in="path",
+     *          description="Product ID",
+     *          required=true,
+     *          @OA\Schema(type="int", format="int64"),
+     *      ),
+     *      @OA\Response(
+     *          response="200", description="Show product"
+     *      )
+     *  )
+     * @return ClientResource
      */
     public function show(Product $product)
     {
@@ -44,10 +92,36 @@ class ProductController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  ProductUpdateRequest  $request
-     * @param  Rroduct  $product
+     * @OA\Put(
+     *      tags={"/products"},
+     *      summary="Update the expecified resources",
+     *      description="Update product on database",
+     *      path="/products/{product}",
+     *      security={{"bearerAuth": {}}},
+     *      @OA\Parameter(
+     *          name="product",
+     *          in="path",
+     *          description="Product ID",
+     *          required=true,
+     *          @OA\Schema(type="int", format="int64"),
+     *      ),
+     *      @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent(
+     *              type="object",
+     *              type="object",
+     *              @OA\Property(property="name", type="string"),
+     *              @OA\Property(property="description", type="string"),
+     *              @OA\Property(property="price", type="string"),
+     *              @OA\Property(property="sku", type="string"),
+     *              @OA\Property(property="stock_amount", type="string"),
+     *              @OA\Property(property="client_id", type="string"),
+     *          ),
+     *      ),
+     *      @OA\Response(
+     *          response="200", description="product Updated"
+     *      )
+     *  )
      * @return \Illuminate\Http\Response
      */
     public function update(ProductUpdateRequest $request, Product $product)
@@ -57,10 +131,24 @@ class ProductController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  Product  $product
-     * @return \Illuminate\Http\Response
+     * @OA\Delete(
+     *      tags={"/products"},
+     *      summary="Display the expecified resources",
+     *      description="show product",
+     *      path="/products/{product}",
+     *      security={{"bearerAuth": {}}},
+     *      @OA\Parameter(
+     *          name="product",
+     *          in="path",
+     *          description="Product ID",
+     *          required=true,
+     *          @OA\Schema(type="int", format="int64"),
+     *      ),
+     *      @OA\Response(
+     *          response="204", description="Product Deleted"
+     *      )
+     *  )
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy(Product $product)
     {

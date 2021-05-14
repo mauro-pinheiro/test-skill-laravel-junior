@@ -45,7 +45,7 @@ class ClientTest extends TestCase
             'updated_at' => now(),
         ])->make();
 
-        // dd($client->getAttributes());
+        dd($client->getAttributes());
 
         $response = $this->json('POST', route('clients.store'), $client->toArray());
 
