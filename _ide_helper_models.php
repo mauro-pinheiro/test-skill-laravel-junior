@@ -18,7 +18,7 @@ namespace App\Models{
  * @property string $document
  * @property string $document_type
  * @property string $full_name
- * @property string $phone_number
+ * @property string $phone
  * @property int $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -37,7 +37,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Client whereDocumentType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Client whereFullName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Client whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Client wherePhoneNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Client wherePhone($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Client whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Client whereUserId($value)
  */
