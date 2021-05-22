@@ -17,7 +17,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Admin/Product/Index');
+        $products = Product::with(['client.user:id,name'])->paginate();
+        // dd($products);
+        return Inertia::render('Admin/Product/Index', compact('products'));
     }
 
     /**
@@ -89,6 +91,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('products.index');
     }
 }

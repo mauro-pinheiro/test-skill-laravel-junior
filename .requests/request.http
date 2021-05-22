@@ -1,11 +1,11 @@
 ###
-GET http://localhost/api/clients
-Authorization: Bearer 3|Vgdfh97iU1MdsElhI9OuP31PyMaYhCUvL5o2CDCQ
+GET http://localhost/api/products
+Authorization: Bearer 1|WLRWfnazhQ61ilLj68WX3GyV9MNh30jCbYtcUS10
 
 ###
 GET http://localhost/api/products/2
-Authorization: Bearer 3|Vgdfh97iU1MdsElhI9OuP31PyMaYhCUvL5o2CDCQ
+Authorization: Bearer 1|WLRWfnazhQ61ilLj68WX3GyV9MNh30jCbYtcUS10
 
 ###
 DELETE http://localhost/api/token/all
-Authorization: Bearer 3|Vgdfh97iU1MdsElhI9OuP31PyMaYhCUvL5o2CDCQ
+Authorization: Bearer 1|WLRWfnazhQ61ilLj68WX3GyV9MNh30jCbYtcUS10
