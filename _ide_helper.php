@@ -15452,6 +15452,84 @@
      
 }
 
+    namespace KgBot\LaravelLocalization\Facades { 
+            /**
+     * 
+     *
+     */ 
+        class ExportLocalizations {
+                    /**
+         * Method to return generate array with contents of parsed language files.
+         *
+         * @return object 
+         * @static 
+         */ 
+        public static function export()
+        {
+                        /** @var \KgBot\LaravelLocalization\Classes\ExportLocalizations $instance */
+                        return $instance->export();
+        }
+                    /**
+         * Method to return array for json serialization.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function jsonSerialize()
+        {
+                        /** @var \KgBot\LaravelLocalization\Classes\ExportLocalizations $instance */
+                        return $instance->jsonSerialize();
+        }
+                    /**
+         * Method to return array.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function toArray()
+        {
+                        /** @var \KgBot\LaravelLocalization\Classes\ExportLocalizations $instance */
+                        return $instance->toArray();
+        }
+                    /**
+         * If you need special format of array that's recognised by some npm localization packages as Lang.js
+         * https://github.com/rmariuzzo/Lang.js use this method.
+         *
+         * @param array $array
+         * @param string $prefix
+         * @return array 
+         * @static 
+         */ 
+        public static function toFlat($prefix = '.')
+        {
+                        /** @var \KgBot\LaravelLocalization\Classes\ExportLocalizations $instance */
+                        return $instance->toFlat($prefix);
+        }
+                    /**
+         * Method to return array as collection.
+         *
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function toCollection()
+        {
+                        /** @var \KgBot\LaravelLocalization\Classes\ExportLocalizations $instance */
+                        return $instance->toCollection();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function exportToArray()
+        {
+                        return \KgBot\LaravelLocalization\Classes\ExportLocalizations::exportToArray();
+        }
+         
+    }
+     
+}
+
     namespace Illuminate\Http { 
             /**
      * 
@@ -18760,6 +18838,7 @@ namespace  {
             class View extends \Illuminate\Support\Facades\View {}
             class L5Swagger extends \L5Swagger\L5SwaggerFacade {}
             class Flare extends \Facade\Ignition\Facades\Flare {}
+            class ExportLocalization extends \KgBot\LaravelLocalization\Facades\ExportLocalizations {}
      
 }
 

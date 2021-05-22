@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +26,17 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function (Request $request) {
-    if(session()->has('token')){
+    if (session()->has('token')) {
         $token = session()->get('token');
         return Inertia::render('Dashboard', compact('token'));
     }
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::resource('products', ProductController::class);
+});
+
+
+
+require __DIR__ . '/auth.php';

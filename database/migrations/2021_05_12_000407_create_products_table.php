@@ -17,7 +17,7 @@ return new Class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->text('description')->nullable();
-            $table->float('price');
+            $table->integer('price');
             $table->string('sku')->unique();      //Stock Keeping Units -> Usado para identificar tipo de produto, facilita o gerenciamento de stocks.
             $table->unsignedInteger('stock_amount');
             $table->foreignId('client_id')->constrained()->onDelete('cascade');

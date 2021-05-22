@@ -24,10 +24,10 @@ class ProductUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'                  => 'sometimes|string|unique:products',
+            'name'                  => 'sometimes|string',
             'description'           => 'sometimes|string',
             'price'                 => 'sometimes|numeric',
-            'sku'                   => 'sometimes|string|unique:products',
+            'sku'                   => 'sometimes|string',
             'stock_amount'          => 'sometimes|integer',
             'client_id'             => 'sometimes|exists:clients,id',
             'updated_at'            => 'sometimes|date',

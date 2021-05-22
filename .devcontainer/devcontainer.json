@@ -36,7 +36,8 @@
         "tabnine.tabnine-vscode",
         "mehedidracula.php-namespace-resolver",
         "humao.rest-client",
-        "octref.vetur"
+        "octref.vetur",
+        "sdras.vue-vscode-extensionpack"
     ],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
