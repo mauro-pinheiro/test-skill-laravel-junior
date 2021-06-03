@@ -1,16 +1,16 @@
 <template>
-  <button :type="type" class="btn btn-dark text-uppercase">
-    <slot></slot>
-  </button>
+    <button :type="type" class="btn btn-dark text-uppercase">
+        <slot></slot>
+    </button>
 </template>
 
 <script>
-  export default {
+export default {
     props: {
-      type: {
-        type: String,
-        default: 'submit',
-      },
-    }
-  }
+        type: {
+            type: String,
+            default: "submit",
+        },
+    },
+};
 </script>

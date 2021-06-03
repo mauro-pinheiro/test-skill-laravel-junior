@@ -6,7 +6,7 @@
 </template>
 
 <script>
-    export default {
-        props: ['value', 'classes']
-    }
+export default {
+    props: ["value", "classes"],
+};
 </script>
