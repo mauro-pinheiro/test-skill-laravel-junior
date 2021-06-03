@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, Filterable;
 
     protected $guarded = ['id'];
 
@@ -24,13 +25,5 @@ class Product extends Model
     public function client() : BelongsTo
     {
         return $this->belongsTo(Client::class);
-    }
-
-    public function getPriceAttribute($price) : float{
-        return (float)$price/100;
-    }
-
-    public function setPriceAttribute(float $price) : void {
-        $this->attributes['price'] = $price * 100;
     }
 }

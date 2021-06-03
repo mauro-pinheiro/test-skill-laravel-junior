@@ -46,7 +46,7 @@
 
                     <template #content>
                         <!-- Authentication -->
-                        <breeze-dropdown-link
+                        <breeze-dropdown-link as="button"
                             :href="route('logout')"
                             method="post"
                         >
@@ -71,7 +71,7 @@
             </a>
 
             <!-- Sidebar -->
-            <div class="sidebar mt-5">
+            <div class="sidebar mt-5 pt-4">
                 <!-- Sidebar Menu -->
                 <nav>
                     <breeze-menu-tree-view>
@@ -81,12 +81,12 @@
                             :href="route('dashboard')"
                             :active="route().current('dashboard')"
                         >
-                            <i class="fas fa-chart-line"></i>
+                            <i class="nav-icon fas fa-chart-line"></i>
                             <p>&nbsp;Dashboard</p>
                         </breeze-nav-link>
                         <breeze-nav-link-tree-view>
                             <template v-slot:icon
-                                ><i class="fas fa-boxes"></i
+                                ><i class="nav-icon fas fa-boxes"></i
                             ></template>
                             <template v-slot:label>
                                 <p>&nbsp;Products</p>
@@ -95,24 +95,17 @@
                                 :href="route('products.index')"
                                 :active="route().current('products.index')"
                             >
-                                <i class="fas fa-table"></i>
+                                <i class="nav-icon fas fa-table"></i>
                                 <p>&nbsp;Index</p>
                             </breeze-nav-link>
                             <breeze-nav-link
                                 :href="route('products.create')"
                                 :active="route().current('products.create')"
                             >
-                                <i class="fas fa-plus"></i>
+                                <i class="nav-icon fas fa-plus"></i>
                                 <p>&nbsp;Create</p>
                             </breeze-nav-link>
                         </breeze-nav-link-tree-view>
-                        <!-- <breeze-nav-link
-                            :href="route('products.index')"
-                            :active="route().current('products.index')"
-                        >
-                            <i class="fas fa-boxes"></i>
-                            <p>&nbsp;Products</p>
-                        </breeze-nav-link> -->
                     </breeze-menu-tree-view>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -137,7 +130,7 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <breeze-banner />
+                    <!-- <breeze-banner /> -->
 
                     <div class="row">
                         <div class="col">

@@ -38,6 +38,8 @@
         "vue-loader": "^16.1.2"
     },
     "dependencies": {
-        "vue-money-format": "^1.2.1"
+        "@types/vue-select": "^3.11.1",
+        "vue-money-format": "^1.2.1",
+        "vue-select": "^3.11.2"
     }
 }

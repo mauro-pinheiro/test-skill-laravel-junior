@@ -25,7 +25,7 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->unique()->words(3, true),
             'description' => $this->faker->text(100),
-            'price' => $this->faker->numberBetween(1, 10000),
+            'price' => $this->faker->randomFloat(2, 1, 10000),
             'sku' => $this->faker->unique()->uuid(),
             'stock_amount' => $this->faker->randomNumber(4),
             'client_id' => Client::inRandomOrder()->first()->id,

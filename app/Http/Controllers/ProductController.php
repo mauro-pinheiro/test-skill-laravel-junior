@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ProductIndexRequest;
 use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
-use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -16,11 +17,15 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ProductIndexRequest $request)
     {
-        $products = Product::with(['client.user:id,name'])->paginate();
-        // dd($products);
-        return Inertia::render('Admin/Product/Index', compact('products'));
+        // $request->dd();
+        $length = $request->length ?? 15;
+        return Inertia::render('Admin/Product/Index', [
+            'products' => fn() => Product::with(['client.user:id,name'])->filter($request->validated())->paginate($length),
+            'term' => fn() => $request?->search,
+            'length' => $length
+        ]);
     }
 
     /**

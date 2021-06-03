@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new Class extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -17,7 +17,7 @@ return new Class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->text('description')->nullable();
-            $table->integer('price');
+            $table->decimal('price', 15, 2);
             $table->string('sku')->unique();      //Stock Keeping Units -> Usado para identificar tipo de produto, facilita o gerenciamento de stocks.
             $table->unsignedInteger('stock_amount');
             $table->foreignId('client_id')->constrained()->onDelete('cascade');
