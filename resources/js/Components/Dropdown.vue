@@ -1,6 +1,6 @@
 <template>
-  <li class="nav-item dropdown">
-    <a :id="id" class="nav-link" role="button" data-toggle="dropdown" aria-expanded="false">
+  <li :class="classes">
+    <a :id="id" href="#" class="nav-link" role="button" data-toggle="dropdown" aria-expanded="false">
       <slot name="trigger"></slot>
     </a>
 
@@ -11,12 +11,17 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      id: {
-        type: String,
-        required: true
-      },
+export default {
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+
+    classes: {
+      type: String,
+      default: 'nav-item dropdown'
     }
   }
+}
 </script>

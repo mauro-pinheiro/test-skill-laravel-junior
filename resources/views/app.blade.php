@@ -7,18 +7,19 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <!-- Google Font: Source Sans Pro -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/dashboard.css') }}">
+
+        @routes
 
         <!-- Scripts -->
-        @routes
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ mix('js/dashboard.js') }}" defer></script>
     </head>
-    <body class="bg-light">
+    <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed bg-light font-sans antialiased">
         @inertia
     </body>
 </html>
