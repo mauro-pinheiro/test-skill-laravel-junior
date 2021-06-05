@@ -1,11 +1,15 @@
 <template>
-    <button :type="type" class="btn btn-dark text-uppercase">
+    <v-btn>
         <slot></slot>
-    </button>
+    </v-btn>
 </template>
 
 <script>
+import {VBtn} from 'vuetify'
 export default {
+    components:{
+        VBtn,
+    },
     props: {
         type: {
             type: String,

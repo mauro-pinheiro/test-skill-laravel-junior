@@ -19,6 +19,10 @@ mix.js('resources/js/app.js', 'public/js').vue()
 mix.js('resources/js/dashboard.js', 'public/js')
     .sass('resources/sass/dashboard/dashboard.scss', 'public/css');
 
+mix.options({
+    legacyNodePolyfills: false
+});
+
 if (mix.inProduction()) {
     mix.version();
 }

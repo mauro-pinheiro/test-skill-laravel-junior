@@ -99,6 +99,7 @@
                             "
                         >
                             <breeze-button
+                                color="dark"
                                 class="ml-4"
                                 :class="{ 'opacity-25': form.processing }"
                                 :disabled="form.processing"
@@ -120,7 +121,6 @@ import BreezeInput from "@/Components/Input";
 import BreezeCheckbox from "@/Components/Checkbox";
 import BreezeLabel from "@/Components/Label";
 import BreezeValidationErrors from "@/Components/ValidationErrors";
-import vSelect from 'vue-select'
 
 export default {
     layout: BreezeAuthenticatedLayout,
@@ -131,7 +131,6 @@ export default {
         BreezeCheckbox,
         BreezeLabel,
         BreezeValidationErrors,
-        vSelect,
     },
 
     props: {
