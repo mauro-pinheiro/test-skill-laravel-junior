@@ -90,10 +90,6 @@
                             readonly
                         />
                     </div>
-                    <div class="form-group">
-                        <breeze-label for="client" value="Client" />
-                        <v-select :options="options" label="country" :reduce="country => country.code" />
-                    </div>
                     <div class="mb-0">
                         <div
                             class="

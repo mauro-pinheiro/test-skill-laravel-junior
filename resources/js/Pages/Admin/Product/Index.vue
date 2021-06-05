@@ -118,7 +118,7 @@ export default {
     },
 
     created() {
-        console.log(this.products.data);
+        console.log(this.products);
     },
 
     props: {

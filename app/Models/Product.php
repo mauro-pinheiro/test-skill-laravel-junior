@@ -20,9 +20,9 @@ class Product extends Model
 
     protected static function booted()
     {
-        static::addGlobalScope('ancient', function (Builder $builder) {
-            $builder->where('client_id', Auth::user()->client->id);
-        });
+        // static::addGlobalScope('ancient', function (Builder $builder) {
+        //     $builder->where('client_id', Auth::user()->client->id);
+        // });
     }
 
     public function client() : BelongsTo
