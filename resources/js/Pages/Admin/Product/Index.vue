@@ -47,6 +47,7 @@
                             <th>Price</th>
                             <th>SKU</th>
                             <th>Stock Amount</th>
+                            <th>Type</th>
                             <th>Client</th>
                             <th>Action</th>
                         </tr>
@@ -62,6 +63,7 @@
                             <td>{{ product.price }}</td>
                             <td>{{ product.sku }}</td>
                             <td>{{ product.stock_amount }}</td>
+                            <td>{{ product.type?.name }}</td>
                             <td>{{ product.client.user.name }}</td>
                             <td>
                                 <div class="d-inline-flex">

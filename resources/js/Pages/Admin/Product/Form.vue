@@ -90,6 +90,10 @@
                             readonly
                         />
                     </div>
+                    <div class="form-group">
+                        <breeze-label for="client" value="Client" />
+                        <v-select :options="options" label="country" :reduce="country => country.code" />
+                    </div>
                     <div class="mb-0">
                         <div
                             class="
@@ -120,6 +124,7 @@ import BreezeInput from "@/Components/Input";
 import BreezeCheckbox from "@/Components/Checkbox";
 import BreezeLabel from "@/Components/Label";
 import BreezeValidationErrors from "@/Components/ValidationErrors";
+import vSelect from 'vue-select'
 
 export default {
     layout: BreezeAuthenticatedLayout,
@@ -130,6 +135,7 @@ export default {
         BreezeCheckbox,
         BreezeLabel,
         BreezeValidationErrors,
+        vSelect,
     },
 
     props: {
@@ -140,16 +146,22 @@ export default {
         edit: Boolean,
     },
 
+    computed: {
+        options() {
+            return [{country: 'Canada', code: 'CA'},];
+        }
+    },
+
     data() {
         return {
             form: this.$inertia.form({
-                name: this.product?.name || "",
-                description: this.product?.description || "",
-                price: this.product?.price || 0,
-                sku: this.product?.sku || "",
-                stock_amount: this.product?.stock_amount || 0,
-                client_id: this.product?.client_id || this.auth.user.client.id,
-                client: this.product?.client || this.auth.user.name,
+                name: this.product?.name ?? "",
+                description: this.product?.description ?? "",
+                price: this.product?.price ?? 0,
+                sku: this.product?.sku ?? "",
+                stock_amount: this.product?.stock_amount ?? 0,
+                client_id: this.product?.client_id ?? this.auth.user.client.id,
+                client: this.product?.client ?? this.auth.user.name,
             }),
         };
     },

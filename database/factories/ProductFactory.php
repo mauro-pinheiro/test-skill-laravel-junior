@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Client;
 use App\Models\Product;
+use App\Models\ProductType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProductFactory extends Factory
@@ -29,6 +30,7 @@ class ProductFactory extends Factory
             'sku' => $this->faker->unique()->uuid(),
             'stock_amount' => $this->faker->randomNumber(4),
             'client_id' => Client::inRandomOrder()->first()->id,
+            'product_type_id' => ProductType::inRandomOrder()->first()->id,
         ];
     }
 }
