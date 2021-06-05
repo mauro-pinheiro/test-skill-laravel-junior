@@ -1,16 +1,15 @@
 <template>
-    <nav v-if="links.length > 3" class="mt-3">
+    <nav v-if="show" class="mt-3">
         <ul class="pagination d-inline justify-content-end">
             <li
-                v-for="(link, index) in links"
+                v-for="(link, index) in data.links"
                 :key="index"
                 class="page-item"
                 v-bind:class="{ active: link.active }"
             >
                 <inertia-link
-                    :class="{'page-link': true, disabled: disabled === index}"
-                    :href="link.url"
-                    preserve-scroll
+                    :class="{ 'page-link': true, disabled: !link.url }"
+                    :href="pageLink(index)"
                 >
                     <span v-html="link.label"></span>
                 </inertia-link>
@@ -21,14 +20,28 @@
 
 <script>
 export default {
-    props: ["links"],
+    props: ["data"],
+
+    methods: {
+        pageLink(index) {
+            let page =
+                index === 0                                     //Button Previous
+                    ? 1
+                    : index === this.data.links.length - 1      //Button Next
+                    ? this.data.current_page + 1
+                    : this.data.links[index].label;             //Any other page button
+            let current = this.route().current();
+            let params = this.route().params;
+            params.page = page;
+            return this.route(current, params);
+        },
+    },
 
     computed: {
-        disabled(){
-            let index = this.links.findIndex((link) => link.active)
-            return index === 1 ? 0 : index === this.links.length - 2 ? this.links.length - 1 : -1;
-        }
-    }
+        show() {
+            return this.data.links.length > 3;
+        },
+    },
 };
 </script>
 

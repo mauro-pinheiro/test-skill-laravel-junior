@@ -18,7 +18,11 @@
 
                 <div class="row my-2">
                     <div class="col-md-2">
-                        <select class="form-control" v-model="length" @change="search">
+                        <select
+                            class="form-control"
+                            v-model="length"
+                            @change="update"
+                        >
                             <option value="15">15</option>
                             <option value="50">50</option>
                             <option value="100">100</option>
@@ -31,7 +35,7 @@
                             ref="input"
                             type="text"
                             v-model="term"
-                            @input="search"
+                            @input="update"
                             placeholder="Search"
                             class="right"
                             v-focus
@@ -92,9 +96,7 @@
                     </tbody>
                 </table>
                 <nav>
-                    <breeze-pagination
-                        :links="products.links"
-                    ></breeze-pagination>
+                    <breeze-pagination :data="products"></breeze-pagination>
                 </nav>
             </div>
         </div>
@@ -140,12 +142,14 @@ export default {
     },
 
     methods: {
-        search() {
-            this.$inertia.get(
-                this.route("products.index"),
-                { search: this.term, length: this.length },
-                { preserveState: false }
-            );
+        update() {
+            let params = {
+                ...this.route().params,
+                search: this.term,
+                length: this.length,
+            };
+            let current = this.route().current();
+            this.$inertia.get(this.route(current), params);
         },
     },
 };

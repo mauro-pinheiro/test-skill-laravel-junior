@@ -17675,13 +17675,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ["links"],
+  props: ["data"],
+  methods: {
+    pageLink: function pageLink(index) {
+      var page = index === 0 //Button Previous
+      ? 1 : index === this.data.links.length - 1 //Button Next
+      ? this.data.current_page + 1 : this.data.links[index].label; //Any other page button
+
+      var current = this.route().current();
+      var params = this.route().params;
+      params.page = page;
+      return this.route(current, params);
+    }
+  },
   computed: {
-    disabled: function disabled() {
-      var index = this.links.findIndex(function (link) {
-        return link.active;
-      });
-      return index === 1 ? 0 : index === this.links.length - 2 ? this.links.length - 1 : -1;
+    show: function show() {
+      return this.data.links.length > 3;
     }
   }
 });
@@ -17890,6 +17899,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.vue");
 /* harmony import */ var _Components_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Input */ "./resources/js/Components/Input.vue");
 /* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Pagination */ "./resources/js/Components/Pagination.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -17923,13 +17938,14 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    search: function search() {
-      this.$inertia.get(this.route("products.index"), {
+    update: function update() {
+      var params = _objectSpread(_objectSpread({}, this.route().params), {}, {
         search: this.term,
         length: this.length
-      }, {
-        preserveState: false
       });
+
+      var current = this.route().current();
+      this.$inertia.get(this.route(current), params);
     }
   }
 });
@@ -18645,7 +18661,7 @@ var _hoisted_2 = {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_inertia_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("inertia-link");
 
-  return $props.links.length > 3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("nav", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_2, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.links, function (link, index) {
+  return $options.show ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("nav", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_2, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.data.links, function (link, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("li", {
       key: index,
       "class": ["page-item", {
@@ -18654,10 +18670,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
       "class": {
         'page-link': true,
-        disabled: $options.disabled === index
+        disabled: !link.url
       },
-      href: link.url,
-      "preserve-scroll": ""
+      href: $options.pageLink(index)
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
         return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
@@ -19370,7 +19385,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $props.length = $event;
         }),
         onChange: _cache[2] || (_cache[2] = function () {
-          return $options.search && $options.search.apply($options, arguments);
+          return $options.update && $options.update.apply($options, arguments);
         })
       }, [_hoisted_8, _hoisted_9, _hoisted_10], 544
       /* HYDRATE_EVENTS, NEED_PATCH */
@@ -19381,7 +19396,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
           return $props.term = $event;
         }),
-        onInput: $options.search,
+        onInput: $options.update,
         placeholder: "Search",
         "class": "right"
       }, null, 8
@@ -19438,10 +19453,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }), 128
       /* KEYED_FRAGMENT */
       ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("nav", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_breeze_pagination, {
-        links: $props.products.links
+        data: $props.products
       }, null, 8
       /* PROPS */
-      , ["links"])])])])];
+      , ["data"])])])])];
     }),
     _: 1
     /* STABLE */
