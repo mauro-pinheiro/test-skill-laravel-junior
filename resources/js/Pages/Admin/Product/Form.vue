@@ -121,7 +121,6 @@ import BreezeInput from "@/Components/Input";
 import BreezeCheckbox from "@/Components/Checkbox";
 import BreezeLabel from "@/Components/Label";
 import BreezeValidationErrors from "@/Components/ValidationErrors";
-import { trans } from "matice";
 
 export default {
     layout: BreezeAuthenticatedLayout,
@@ -140,12 +139,6 @@ export default {
         errors: Object,
         status: String,
         edit: Boolean,
-    },
-
-    computed: {
-        options() {
-            return [{country: 'Canada', code: 'CA'},];
-        }
     },
 
     data() {

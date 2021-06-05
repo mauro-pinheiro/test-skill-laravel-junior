@@ -9,7 +9,7 @@
             >
                 <inertia-link
                     :class="{ 'page-link': true, disabled: !link.url }"
-                    :href="link.url"
+                    :href="link.url ?? '#'"
                 >
                     <span v-html="link.label"></span>
                 </inertia-link>

@@ -119,9 +119,9 @@ export default {
         BreezePagination,
     },
 
-    created() {
-        console.log(this.products);
-    },
+    // created() {
+    //     console.log(this.products);
+    // },
 
     props: {
         auth: Object,
