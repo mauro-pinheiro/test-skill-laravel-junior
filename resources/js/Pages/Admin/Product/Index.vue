@@ -96,7 +96,7 @@
                     </tbody>
                 </table>
                 <nav>
-                    <breeze-pagination :data="products"></breeze-pagination>
+                    <breeze-pagination :links="products.links"></breeze-pagination>
                 </nav>
             </div>
         </div>

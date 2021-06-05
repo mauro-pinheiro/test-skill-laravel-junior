@@ -26,7 +26,7 @@ class ProductController extends Controller
         // $request->dd();
         $length = $request->length ?? 15;
         return Inertia::render('Admin/Product/Index', [
-            'products' => fn() => Product::with(['client.user:id,name'])->filter($request->validated())->paginate($length),
+            'products' => fn() => Product::with(['client.user:id,name'])->filter($request->validated())->paginate($length)->withQueryString(),
             'term' => fn() => $request?->search,
             'length' => $length
         ]);
