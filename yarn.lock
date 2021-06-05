@@ -7974,6 +7974,11 @@ vue@^3.0.5:
     "@vue/runtime-dom" "3.0.11"
     "@vue/shared" "3.0.11"
 
+vuetify@3.0.0-alpha.5:
+  version "3.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.0.0-alpha.5.tgz#83d3037bdafb521469eab834927acb57d9d7f05d"
+  integrity sha512-CEQRlWyEdfqrsIn/KiBGUjfMHb8lW04iuc7ORlMWHXa5Kpcn4TshjjHGakTLEigkwTH41FgX5LnaNfBWW9U7EQ==
+
 watchpack@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-2.2.0.tgz#47d78f5415fe550ecd740f99fe2882323a58b1ce"
